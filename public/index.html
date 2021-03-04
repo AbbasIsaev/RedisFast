@@ -1,0 +1,39 @@
+<html lang="ru">
+
+<head>
+    <title>RedisFast</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+</head>
+
+<body>
+<h1>Redis fast</h1>
+<p>Микросервисная архитектура Redis</p>
+<p>[GET] Список REST API:</p>
+<ul>
+    <li><a href="api/users">users (Справочник. Пользователи)</a></li>
+</ul>
+<h2>Добавить пользователя</h2>
+<form action="/api/users" method="post">
+    <p>
+        <label>
+            Фамилия
+            <input name="first_name" type="text">
+        </label>
+        <label>
+            Имя
+            <input name="last_name" type="text">
+        </label>
+        <label>
+            Отчество
+            <input name="patronymic" type="text">
+        </label>
+    </p>
+    <p><input type="submit" value="Отправить"/></p>
+</form>
+<h2>Очистить кэш пользователей</h2>
+<form action="/api/users/destroy" method="post">
+    <p><input type="submit" value="Очистить кэш"/></p>
+</form>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    // Правила https://eslint.org/docs/rules/
+    // Пробелы
+    "no-multi-spaces": "warn",
+    "object-curly-spacing": [
+      "warn",
+      "never",
+      {
+        "objectsInObjects": false,
+        "arraysInObjects": false
+      }
+    ],
+    "array-bracket-spacing": [
+      "warn",
+      "never",
+      {
+        "singleValue": false,
+        "arraysInArrays": false
+      }
+    ],
+    "computed-property-spacing": [
+      "warn",
+      "never"
+    ],
+    "key-spacing": [
+      "warn",
+      {
+        "mode": "strict"
+      }
+    ],
+    "comma-spacing": [
+      "warn",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    // Отступ 4 пробела https://eslint.org/docs/rules/indent
+    "indent": [
+      "warn",
+      4,
+      {
+        "MemberExpression": 1,
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "warn",
+      "windows"
+    ],
+    // Запретить debugger
+    "no-debugger": "warn",
+    // Запретить использование оповещения
+    "no-alert": "warn",
+    // Предлагать const вместо let
+    "prefer-const": "warn",
+    // Запретить ;
+    "semi": [
+      "warn",
+      "never"
+    ],
+    // Если блок if содержит return инструкцию, блок else становится ненужным
+    "no-else-return": "warn",
+    /* Разрешается одинарная ковычка, allowTemplateLiterals - обратные ковычки,
+       avoidEscape - позволяет использовать одинарные или двойные кавычки, внутри строки */
+    "quotes": [
+      "warn",
+      "single",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": true
+      }
+    ],
+    // Запятые ставятся в конце текущей строки
+    "comma-style": [
+      "warn",
+      "last",
+      {
+        "exceptions": {
+          "ArrayExpression": false,
+          "ArrayPattern": false,
+          "ArrowFunctionExpression": false,
+          "CallExpression": false,
+          "FunctionDeclaration": false,
+          "FunctionExpression": false,
+          "ImportDeclaration": false,
+          "ObjectExpression": false,
+          "VariableDeclaration": false,
+          "NewExpression": false,
+          "ObjectPattern": false
+        }
+      }
+    ],
+    // Запрещает использование запятых в конце объектов и массивов
+    "comma-dangle": [
+      "warn",
+      "never"
+    ],
+    /* Лексическое объявление применяется только к текущему предложению case,
+       заключите ваши предложения в блоки.*/
+    "no-case-declarations": "warn"
+
+    /* Никогда не опускать фигурные скобки вокруг блоков, если блок содержит только один оператор
+    "curly": "warn",*/
+    /* Только camelcase, "properties": "never" - не проверяет имена свойств на camelcase,
+       "ignoreDestructuring": true - не проверяет деструктурированные идентификаторы
+       (но все же проверяет любое использование этих идентификаторов позже в коде)
+    "camelcase": [
+      "warn",
+      {
+        "properties": "never",
+        "ignoreDestructuring": true
+      }
+    ]*/
+  },
+  "overrides": [
+    {
+      // Переопределяем правила для ts и tsx
+      // enable the rule specifically for TypeScript files
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": [
+          "warn"
+        ],
+        "@typescript-eslint/no-var-requires": [
+          "warn"
+        ],
+        "@typescript-eslint/no-explicit-any": 0,
+        "@typescript-eslint/no-empty-function": "warn"
+      }
+    }
+  ]
+}
